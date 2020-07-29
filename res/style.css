@@ -1,0 +1,28 @@
+body {
+background-color: #ffa685;
+color: #c685ff;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 10rem;
+}
+header {
+font-family: Kalos;
+font-size: 2.5rem;
+}
+@font-face {
+font-family: 'DODGE';
+src: url('DODGE.ttf');
+}
+@font-face {
+font-family: 'Kalos';
+src: url('Kalos.ttf');
+}
+@font-face {
+font-family: 'Joystick';
+src: url('Joystick.ttf');
+}
+@font-face {
+font-family: 'GoodTimes';
+src: url('GoodTimes.ttf');
+}
