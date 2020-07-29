@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" content="/favicon.png">
+<link rel="icon" content="/img/banner.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width;height=device-height">
 <style>
