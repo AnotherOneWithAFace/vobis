@@ -55,7 +55,8 @@ foreach ($db->query("SELECT * FROM files.upload WHERE hash = \"$hash\";") as $q)
 		$stuff = file_get_contents("." . $db_filename);
 		echo "<br/><pre>" . $stuff . "</pre>";
 	} else {
-		header("Location: /fail.html");
+		echo "unhandled mime type: $type";
+		echo "<br/> file extension=$extension";
 	}
 }
 
