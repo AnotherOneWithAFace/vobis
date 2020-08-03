@@ -4,6 +4,7 @@
 <link rel="icon" content="/img/banner.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width;height=device-height">
+<title>File</title>
 <style>
 html {
 background-color: #b0aead;
@@ -22,6 +23,7 @@ white-space: pre-wrap;
 font-size: medium;
 }
 </style>
+</head>
 <body>
 <?php
 
