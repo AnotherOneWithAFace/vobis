@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload successful :^)</title>
+<meta name="viewport" content="width=device-width;height=device-height">
+<meta name="charset" value="utf-8">
+<link rel="icon" href="img/banner.png">
+<link rel="stylesheet" href="/res/style.css">
+</head>
+<body>
 <?php
 $target_dir="/data/";
 $mimetype= $_FILES['file']['type'];
@@ -33,3 +43,6 @@ if ($db->exec($query)) {
 	echo "<h2>FAILURE</h2>";
 }
 ?>
+
+</body>
+</html>
