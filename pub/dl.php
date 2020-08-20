@@ -39,26 +39,43 @@ foreach ($db->query("SELECT * FROM files.upload WHERE hash = \"$hash\";") as $q)
 	$type=$q['mimetype'];
 	$extension = strtolower(pathinfo($db_filename, PATHINFO_EXTENSION));
 	$filename .= ".$extension";
-	if ($extension === "mp3" || $extension === "opus"){
-		echo "<audio controls autoplay src=\"$filename\">LOL get a better browser CUCK</audio>";
-	} else if ($extension === "ogg") { 
-		if ($type === "audio/ogg") {
+	switch ($extension) {
+		case "mp3":
+		case "opus":
 			echo "<audio controls autoplay src=\"$filename\">LOL get a better browser CUCK</audio>";
-		} else if ($type === "video/ogg") {
+			break;
+		case "ogg":
+			if ($type === "video/ogg") {
 			echo "<video controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
-		}
-	} else if ($extension === "jpg" || $extension === "jpeg" || $extension === "png" || $extension === "gif" || $extension === "webp") {
-		echo "<img src=\"$filename\" alt=\"$filename\"/>";
-	} else if ($extension === "mp4") {
-		echo "<video controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
-	} else if ($extension === "webm") {
-		echo "<video controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
-	} else if ($type === "text/plain" || $extension === "txt") {
-		$stuff = file_get_contents("." . $db_filename);
-		echo "<br/><pre>" . $stuff . "</pre>";
-	} else {
-		echo "unhandled mime type: $type";
-		echo "<br/> file extension=$extension";
+			} else {
+				echo "<audio controls autoplay src=\"$filename\">LOL get a better browser CUCK</audio>";
+			}
+			break;
+		case "jpg":
+		case "jpeg":
+		case "png":
+		case "gif":
+		case "webp":
+			echo "<img src=\"$filename\" alt=\"$filename\"/>";
+			break;
+		case "mp4":
+		case "webm":
+			echo "<video controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
+			break;
+		case "txt":
+			$stuff = file_get_contents("." . $db_filename);
+			echo "<br/><pre>" . $stuff . "</pre>";
+			break;
+		default:
+			if ($type === "text/plain") {
+				$stuff = file_get_contents("." . $db_filename);
+				echo "<br/><pre>" . $stuff . "</pre>";
+				break;
+			} else {
+				echo "unhandled mime type: $type";
+				echo "<br/> file extension=$extension";
+				break;
+			}
 	}
 }
 
