@@ -8,19 +8,24 @@
 <body>
 <img src="img/banner.png" alt="banner"> 
 <?php
+function h($str)
+{
+	echo "<header>$str</header>";
+}
+
 $lang = $_GET['lang'];
 switch ($lang) {
 	case "en":
-		echo "<header>Welcome!</header>";
+		h("Welcome!");
 		break;
 	case "ga":
-		echo "<header>Fáilte!</header>";
+		h("Fáilte!");
 		break;
 	case "la":
-		echo "<header>Gratissium!</header>";
+		h("Gratissium!");
 		break;
 	case "fr":
-		echo "<header>Bienvenue!</header>";
+		h("Bienvenue!");
 		break;
 	default:
 		echo "<header>Welcome! | Fáilte! | Gratissimum! | Bienvenue!</header>";
