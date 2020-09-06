@@ -12,5 +12,5 @@ try {
 	echo "fail lol";
 	die();
 }
-echo "you typed " . $_POST['txt'];
+echo "you typed " . $txt;
 ?>
