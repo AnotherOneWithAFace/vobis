@@ -9,7 +9,8 @@ try {
 		echo "faaaaaill<br/>ERROR: " . $db->error;
 	}
 } catch (PDOException $e) {
-	echo "fail lol";
+	echo "fail lol\n";
+	echo "PDOException: " . $e->getMessage;
 	die();
 }
 echo "you typed " . $txt;

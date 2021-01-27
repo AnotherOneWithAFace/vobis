@@ -41,6 +41,7 @@ if ($db->exec($query)) {
 	echo "<h3>Your file can now be found at <a href=\"/i/$target_file\">$target_file</a>";
 } else {
 	echo "<h2>FAILURE</h2>";
+	echo "PDO::errorCode() : " . $db->errorCode();
 }
 ?>
 
