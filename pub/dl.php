@@ -4,6 +4,8 @@
 <link rel="icon" content="/img/banner.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width;height=device-height">
+<meta property="og:title" content="File">
+<meta property="og:type" content="video.movie">
 <title>File</title>
 <style>
 html {
@@ -61,6 +63,7 @@ foreach ($db->query("SELECT * FROM files.upload WHERE hash = \"$hash\";") as $q)
 		case "mp4":
 		case "webm":
 			echo "<video controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
+			echo "<meta property=\"og:url\" content=\"$filename\"><meta property=\"og:video\" content=\"$filename\">";
 			break;
 		case "txt":
 			$stuff = file_get_contents("." . $db_filename);
