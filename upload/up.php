@@ -9,10 +9,12 @@
 </head>
 <body>
 <?php
+$now=time();
 $target_dir="/data/";
 $mimetype= $_FILES['file']['type'];
-$extension = strtolower(pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION));
-$target_file= md5($_FILES['file']['name']);
+$urlfile=$_FILES['file']['name'];
+$extension = strtolower(pathinfo($urlfile, PATHINFO_EXTENSION));
+$target_file= md5($urlfile . $now);
 $target_filename= $target_dir . $target_file . "." . $extension;
 $user_ip= $_SERVER['REMOTE_ADDR'];
 
