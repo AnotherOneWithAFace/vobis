@@ -24,6 +24,14 @@ pre {
 white-space: pre-wrap;
 font-size: medium;
 }
+a {
+text-decoration: none;
+color:#926fa6;
+font-family:sans-serif;
+}
+footer{
+text-align: center;
+}
 </style>
 </head>
 <body>
@@ -83,5 +91,11 @@ foreach ($db->query("SELECT * FROM files.upload WHERE hash = \"$hash\";") as $q)
 }
 
 ?>
+<center>
+<footer>
+<a id="backlink" href="/upload"><img width="256" height="256" src="/img/banner.png"/>
+</a><a id="backlink" href="/upload">Upload another!</a>
+</footer>
+</center>
 </body>
 </html>
