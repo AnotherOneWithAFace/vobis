@@ -70,7 +70,7 @@ foreach ($db->query("SELECT * FROM files.upload WHERE hash = \"$hash\";") as $q)
 			break;
 		case "mp4":
 		case "webm":
-			echo "<video controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
+			echo "<video loop controls autoplay anonymous><source src=\"$filename\" type=\"$type\">LOL get a better browser CUCK</video>";
 			echo "<meta property=\"og:url\" content=\"$filename\"><meta property=\"og:video\" content=\"$filename\">";
 			break;
 		case "txt":
